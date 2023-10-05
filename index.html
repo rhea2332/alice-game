@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>level1</title>
+<script type="text/javascript" src="phaser.js"></script>
+<script type="text/javascript" src="phaser2.js"></script>
+<script type="text/javascript" src="Boot.js"></script>
+<script type="text/javascript" src="Preloader.js"></script>
+<script type="text/javascript" src="TitleScreen.js"></script>
+<script type="text/javascript" src="Level1.js"></script>
+<script type="text/javascript" src="GameOver.js"></script>
+
+<style>
+
+canvas{
+padding:0;
+margin:auto;
+display:block;
+position: absolute;
+top:0;
+bottom:0;
+left:0;
+right:0;
+}
+
+body{
+  background-color: black;
+}
+</style>
+
+  </head>
+  <body>
+
+    <script type="text/javascript">
+      window.onload= function(){
+        // display : block; margin : auto};
+        var game = new Phaser.Game(1400,800,Phaser.CANVAS,'');
+
+        game.state.add('Boot', Game.Boot);
+        game.state.add('Preloader', Game.Preloader);
+        game.state.add('TitleScreen', Game.TitleScreen);
+        game.state.add('Level1', Game.Level1);
+        game.state.add('GameOver', Game.GameOver);
+
+        game.state.start('Boot');
+      }
+
+    </script>
+
+  </body>
+</html>
